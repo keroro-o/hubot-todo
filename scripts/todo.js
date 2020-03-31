@@ -28,4 +28,10 @@ module.exports = (robot) => {
     todo.del(task);
     msg.send('削除しました： ' + task);
   });
+  robot.respond(/list/i, (msg) => {
+    msg.send(todo.list().join('\n'));
+  });
+  robot.respond(/donelist/i, (msg) => {
+    msg.send(todo.donelist().join('\n'));
+  });
 };
